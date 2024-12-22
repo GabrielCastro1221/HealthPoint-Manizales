@@ -1,0 +1,141 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 90px;
+  background-image: url(/assets/img/backgroung-pattern-3.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rent-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.owner {
+  padding: 8px;
+  background-color: rgba(0, 217, 255, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+}
+
+.owner strong {
+  font-weight: 800;
+  color: var(--btncolor);
+}
+
+.main-image {
+  text-align: center;
+}
+
+.main-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.details:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.details h2 {
+  margin: 10px 0;
+  color: var(--btncolor);
+  font-size: 2.5rem;
+}
+
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+.address,
+.price,
+.dimension,
+.status {
+  margin: 10px 0;
+  font-size: 1.4rem;
+}
+
+.sub {
+  color: var(--btncolor);
+}
+
+.contact-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.contact {
+  padding: 8px;
+  background-color: var(--btncolor);
+  color: white;
+  border-radius: 7px;
+  font-size: 1.7rem;
+}
+
+.contact i {
+  margin-right: 10px;
+}
+
+.contact:hover {
+  background-color: var(--secondcolor);
+  color: var(--textcolor);
+}
+
+@media (min-width: 768px) {
+  .rent-container {
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  .main-image img {
+    max-width: 300px;
+  }
+
+  .details {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rent-container {
+    gap: 100px;
+  }
+}

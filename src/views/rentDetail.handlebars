@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="/css/rentDetail/rentDetail.css" />
+
+<div class="container">
+    <div class="rent-container">
+        <div>
+            <div class="main-image">
+                <img id="mainImg" src="{{rent.img}}" alt="{{rent.title}}" />
+            </div>
+            <div class="gallery" id="gallery">
+                {{#if rent.photo}}
+                {{#each rent.photo}}
+                <img src="{{this}}" alt="{{../rent.title}}" />
+                {{/each}}
+                {{else}}
+                <p>No hay imágenes adicionales disponibles.</p>
+                {{/if}}
+            </div>
+        </div>
+        <div class="details">
+            <div class="owner">
+                <strong>
+                    propietario:
+                    <span>
+                        {{rent.owner}}
+                    </span>
+                </strong>
+            </div>
+            <h2>{{rent.title}}</h2>
+            <p style="font-size: 1.4rem;">{{rent.description}}</p>
+            <p class="price"><strong class="sub">Precio:</strong>
+                <span>${{rent.price}}</span>
+            </p>
+            <p class="dimension"><strong class="sub">Dimensiones:</strong>
+                <span>{{rent.dimension}}²</span>
+            </p>
+            <p class="address"><strong class="sub">Dirección:</strong>
+                <span>{{rent.address}}</span>
+            </p>
+            <p class="status"><strong class="sub">Estado:</strong>
+                <span>{{rent.status}}</span>
+            </p>
+            <div class="contact-container">
+                <a class="contact" target="_blank" href="https://api.whatsapp.com/send?phone={{rent.owner_phone}}">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Contactar con el Propietario
+                </a>
+            </div>
+      
+               <a class="contact" target="_blank" href="mailto:{{rent.owner_phone}}">
+                    <i class="fa-solid fa-envelope"></i>
+                    Contactar via email
+                </a>
+        
+        </div>
+    </div>
+</div>
+
+<script src="/js/rentDetail/rentDetail.js"></script>

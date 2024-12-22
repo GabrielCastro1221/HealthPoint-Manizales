@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/css/rent/rent.css" />
+
+<div class="body-rent">
+  {{#if rents}}
+    {{#each rents}}
+      <div class="card">
+        <img src="{{this.img}}" alt="{{this.title}}" class="img-rent" />
+        <h1>{{this.title}}</h1>
+        <p>{{this.description}}</p>
+        <p class="price">{{this.price}}/mes</p>
+        <a href="/rentas/{{this._id}}" class="btn">Mas información</a>
+      </div>
+    {{/each}}
+  {{else}}
+    <p class="message-error">{{message}}</p>
+  {{/if}}
+</div>

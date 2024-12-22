@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="/css/rentsDoctor/rentsDoctor.css" />
+
+<div>
+    <div class="create-content">
+        <div class="btnC">
+            <h3 class="titleC">Tienes un consultorio en alquiler:</h3>
+            <button class="create-btn" id="modal-create-rent">Publicar</button>
+        </div>
+
+        <div id="modal-create-rent-container" class="modal mt-3 hidden">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <form id="create-rent-form">
+                    <div>
+                        <h4>Publicar consultorio</h4>
+                        <div>
+                            <label for="title">Título:</label>
+                            <input type="text" id="title" name="title" required />
+                        </div>
+                        <div>
+                            <label for="address">Dirección:</label>
+                            <input type="text" id="address" name="address" required />
+                        </div>
+                        <div>
+                            <label for="price">Precio:</label>
+                            <input type="number" id="price" name="price" required />
+                        </div>
+                        <div>
+                            <label for="dimension">Dimensiones (m²):</label>
+                            <input type="text" id="dimension" name="dimension" required />
+                        </div>
+                        <div>
+                            <label for="category">Categoría:</label>
+                            <select id="category" name="category" required>
+                                <option value="" disabled selected>Seleccione una categoría</option>
+                                <option value="consultorio">Consultorio</option>
+                                <option value="oficina">Oficina</option>
+                                <option value="sala">Sala de Reuniones</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="description">Descripción:</label>
+                            <textarea id="description" name="description" required></textarea>
+                        </div>
+                        <div>
+                            <label for="mainImg">Imagen Principal:</label>
+                            <input type="file" id="mainImg" name="mainImg" accept="image/*" required />
+                        </div>
+                        <div id="gallery-container">
+                            <label for="photos">Galería de Imágenes:</label>
+                            <div id="photo-inputs">
+                                <input type="file" name="photos" accept="image/*" class="gallery-input" />
+                            </div>
+                            <button type="button" id="add-image" class="add-image-btn">
+                                Agregar otra imagen
+                            </button>
+                        </div>
+                        <button type="submit" class="create-btn-modal">Publicar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/rentsDoctor/rentsDoctor.js"></script>
