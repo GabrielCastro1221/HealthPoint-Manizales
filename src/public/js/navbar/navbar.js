@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const authButton = document.getElementById("auth-button");
 
   if (user) {
-    authButton.textContent = "Mi Perfil";
+    authButton.textContent = "Perfil";
     if (user.role === "doctor") {
       authButton.href = "/perfil-doctor";
     } else if (user.role === "paciente") {
