@@ -73,6 +73,30 @@
     background-color: var(--secondcolor);
 }
 
+.changeRentedStatus {
+    padding: 8px;
+    background-color: var(--btncolor);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.changeRentedStatus:hover {
+    background-color: var(--secondcolor);
+}
+
+.changeAvaliableStatus {
+    padding: 8px;
+    background-color: var(--btncolor);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.changeAvaliableStatus:hover {
+    background-color: var(--secondcolor);
+}
+
 .cancelRent {
     padding: 8px;
     background-color: red;
@@ -98,7 +122,8 @@
 }
 
 @media (max-width: 485px) {
-    .btn-rents {
+    .btn-rent {
         flex-direction: column;
+        gap: 10px;
     }
 }

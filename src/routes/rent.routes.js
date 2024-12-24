@@ -18,47 +18,11 @@ router.post(
 
 router.get("/", rent.getAllRents);
 router.get("/:id", rent.getRentById);
-
-router.put(
-  "/:id",
-  auth.authenticate,
-  auth.restrict(["doctor"]),
-  rent.updateRent
-);
-
-router.delete(
-  "/:id",
-  auth.authenticate,
-  auth.restrict(["doctor", "admin"]),
-  rent.deleteRent
-);
-
-router.put(
-  "/:id/approval-status",
-  auth.authenticate,
-  auth.restrict(["admin"]),
-  rent.changeApprovalStatus
-);
-
-router.put(
-  "/:id/cancelled-status",
-  auth.authenticate,
-  auth.restrict(["admin"]),
-  rent.cancelledStatus
-);
-
-router.put(
-  "/:id/avaliable-status",
-  auth.authenticate,
-  auth.restrict(["doctor"]),
-  rent.changeAvaliableStatus
-);
-
-router.put(
-  "/:id/rented-status",
-  auth.authenticate,
-  auth.restrict(["doctor"]),
-  rent.changeRentedStatus
-);
+router.put("/:id", rent.updateRent);
+router.delete("/:id", rent.deleteRent);
+router.put("/:id/approval-status", rent.changeApprovalStatus);
+router.put("/:id/cancelled-status", rent.cancelledStatus);
+router.put("/:id/avaliable-status", rent.changeAvaliableStatus);
+router.put("/:id/rented-status", rent.changeRentedStatus);
 
 module.exports = router;
