@@ -52,11 +52,9 @@ class EmailManager {
           </div> 
           <h2 style="color: #1b715e;">¡Bienvenido a Health Point Manizales!</h2> 
           <p>Te has registrado como un doctor en nuestra plataforma. Para aprobar tu perfil, por favor completa todos los datos y realiza el pago de:</p>
-          <ul>
-            <li><strong style="color: #1b715e;">$100</strong> mensual</li>
-            <li><strong style="color: #1b715e;">$200</strong> cada 6 meses</li>
-            <li><strong style="color: #1b715e;">$300</strong> por año</li>
-          </ul>
+          <div style="text-align: center; margin-top: 20px;">
+            <a href="mailto:/${configObject.mailer.mailer_user}" target="_blank" style="display: inline-block; background-color: #1b715e; color: white; text-decoration: none; padding: 12px 20px; border-radius: 5px; font-weight: bold; font-size: 16px;">Contactar</a>
+          </div>
           <p>Una vez aprobado tu perfil, podrás recibir citas médicas de tus pacientes a través de nuestra plataforma.</p>
         </div>`,
       };
@@ -68,6 +66,7 @@ class EmailManager {
       );
     }
   }
+  
 
   async enviarCorreoNuevoDoctor(doctorData) {
     try {

@@ -164,6 +164,7 @@ class UserController {
             appointmentDate: appointment_date,
             ticketPrice: ticket_price,
             type,
+            doctorEmail: doctor.email,
           });
         } else if (type === "online") {
           await mailer.enviarCorreoCitaOnline(doctor.email, {
