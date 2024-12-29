@@ -17,17 +17,18 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 70%;
+    width: 100%;
     text-align: center;
     margin-bottom: 20px;
 }
 
 
 .doctor-photo img {
+    margin-top: -2000px;
     margin-left: -40px;
-    width: 60%;
-    height: 200px;
-    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }
 
 .doctor-info {
