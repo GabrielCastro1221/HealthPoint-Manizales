@@ -6,6 +6,8 @@
 
 .grid {
     display: grid;
+    align-items: center;
+    justify-content: center;
     grid-template-columns: 1fr;
     gap: 50px;
 }
@@ -429,9 +431,11 @@
 
 .btns-act {
     display: flex;
-    align-self: center;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
+
 
 .card-rent {
     display: flex;

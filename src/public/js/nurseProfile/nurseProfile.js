@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function showSuccessToast(message) {
     Toastify({
       text: message,
-      duration: 3000,
+      duration: 1000,
       close: true,
       gravity: "top",
       position: "right",
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function showErrorToast(message) {
     Toastify({
       text: message,
-      duration: 3000,
+      duration: 1000,
       close: true,
       gravity: "top",
       position: "right",

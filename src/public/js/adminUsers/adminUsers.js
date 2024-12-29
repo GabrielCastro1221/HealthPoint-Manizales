@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               e.target.closest(".user-card").remove();
               Toastify({
                 text: "Usuario eliminado con éxito",
-                duration: 3000,
+                duration: 1000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else {
               Toastify({
                 text: `Error al eliminar el usuario: ${deleteData.message}`,
-                duration: 3000,
+                duration: 1000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.error("Error al eliminar el usuario:", err);
             Toastify({
               text: "Error al eliminar el usuario",
-              duration: 3000,
+              duration: 1000,
               close: true,
               gravity: "top",
               position: "right",
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               userRoleElement.textContent = changeRoleData.role;
               Toastify({
                 text: "Rol del usuario cambiado con éxito",
-                duration: 3000,
+                duration: 1000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else {
               Toastify({
                 text: `Error al cambiar el rol del usuario: ${changeRoleData.message}`,
-                duration: 3000,
+                duration: 1000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.error("Error al cambiar el rol del usuario:", err);
             Toastify({
               text: "Error al cambiar el rol del usuario",
-              duration: 3000,
+              duration: 1000,
               close: true,
               gravity: "top",
               position: "right",

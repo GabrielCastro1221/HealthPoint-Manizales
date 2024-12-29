@@ -2,23 +2,30 @@
 
 <section class="section-main mt-13">
     <div class="container">
-        <div id="content" class="grid">
+        <div id="content">
             <div class="tabs-btns">
                 <button class="group-1" data-target="users">Usuarios</button>
                 <button class="group-1" data-target="doctors">Doctores</button>
                 <button class="group-1" data-target="nurses">Enfermeras</button>
+                <button class="group-1" data-target="bookings">Citas</button>
+                <button class="group-1" data-target="tickets">Tickets</button>
                 <button class="group-1" data-target="rents">alquileres</button>
+            </div>
+            <div class="doc-wrapper">
+                <a href="/apidocs" target="_blank" class="tab-content doc">Documentacion Api Health Point Manizales</a>
             </div>
         </div>
         <div class="tab-content" id="users">{{> adminUsers}}</div>
         <div class="tab-content" id="doctors">{{> adminDoctors}}</div>
         <div class="tab-content" id="nurses">{{> adminNurses}}</div>
+        <div class="tab-content" id="bookings">{{> adminBookings}}</div>
+        <div class="tab-content" id="tickets">{{> adminTickets}}</div>
         <div class="tab-content" id="rents">{{> adminRents}}</div>
     </div>
 
     <div class="btn-out">
-    <button class="group-2 logout-button" data-target="cerrar">Cerrar sesión</button>
-</div>
+        <button class="group-2 logout-button" data-target="cerrar">Cerrar sesión</button>
+    </div>
 </section>
 
 <script src="/js/admin/admin.js"></script>

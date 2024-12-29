@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               nurseStatusElement.textContent = approveData.data.isApproved;
               Toastify({
                 text: "Enfermera aprobada con éxito",
-                duration: 3000,
+                duration: 1000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else {
               Toastify({
                 text: `Error al aprobar la enfermera: ${approveData.message}`,
-                duration: 3000,
+                duration: 1000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.error("Error al aprobar la enfermera:", err);
             Toastify({
               text: "Error al aprobar la enfermera",
-              duration: 3000,
+              duration: 1000,
               close: true,
               gravity: "top",
               position: "right",
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               nurseStatusElement.textContent = cancelData.data.isApproved;
               Toastify({
                 text: "Enfermera cancelada con éxito",
-                duration: 3000,
+                duration: 1000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else {
               Toastify({
                 text: `Error al cancelar la enfermera: ${cancelData.message}`,
-                duration: 3000,
+                duration: 1000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.error("Error al cancelar la enfermera:", err);
             Toastify({
               text: "Error al cancelar la enfermera",
-              duration: 3000,
+              duration: 1000,
               close: true,
               gravity: "top",
               position: "right",
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               nurseCardContainer.removeChild(nurseCard);
               Toastify({
                 text: "Enfermera eliminada con éxito",
-                duration: 3000,
+                duration: 1000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else {
               Toastify({
                 text: `Error al eliminar la enfermera: ${deleteData.message}`,
-                duration: 3000,
+                duration: 1000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.error("Error al eliminar la enfermera:", err);
             Toastify({
               text: "Error al eliminar la enfermera",
-              duration: 3000,
+              duration: 1000,
               close: true,
               gravity: "top",
               position: "right",
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
         className: "error",
         position: "right",
-        duration: 3000,
+        duration: 1000,
       }).showToast();
     }
   } catch (error) {
@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
       className: "error",
       position: "right",
-      duration: 3000,
+      duration: 1000,
     }).showToast();
   }
 });

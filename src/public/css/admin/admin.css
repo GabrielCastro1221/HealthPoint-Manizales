@@ -17,7 +17,7 @@
 .tabs-btns {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10px;
   width: 100%;
 }
@@ -36,7 +36,6 @@
 
 .btn-out {
   display: flex;
-  flex-direction: column;
   align-items: center;
   width: 100%;
   justify-content: center;
@@ -47,7 +46,7 @@
   padding: 8px;
   background-color: var(--btncolor);
   color: white;
-  width: 30%;
+  width: 50%;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -150,6 +149,30 @@
   color: var(--textcolor);
 }
 
+.doc-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doc {
+  padding: 8px;
+  background-color: var(--btncolor);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  width: 40%;
+}
+
+.doc:hover {
+  background-color: var(--secondcolor);
+  color: var(--textcolor);
+}
+
 .rolUser {
   padding: 8px;
   background-color: var(--btncolor);
@@ -172,5 +195,21 @@
 @media (max-width: 768px) {
   .user-card {
     width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 655px) {
+  .doc {
+    width: 100%;
+  }
+} 
+
+@media (max-width: 559px) {
+  .tabs-btns {
+    flex-wrap: wrap;
+  }
+
+  .doc {
+    width: 100%;
   }
 }

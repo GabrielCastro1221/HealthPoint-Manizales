@@ -13,26 +13,29 @@ document.addEventListener("DOMContentLoaded", () => {
           icon: "fi fi-rr-doctor",
           title: "Nuestra ubicación",
           description:
-            "Cada especialista tiene su propia clínica o consultorio en diferentes partes de la ciudad y sus alrededores. Nuestra plataforma te permite encontrar al profesional adecuado cerca de    ti.",
+            "Cada especialista tiene su propia clínica o consultorio en diferentes partes de la ciudad y sus alrededores. Nuestra plataforma te permite encontrar al profesional adecuado cerca de ti.",
         },
         {
           icon: "fi fi-tr-user-md",
           title: "Agendar una cita",
           description:
-            "Citas Presenciales: Elige la fecha de tu cita y visita a tu doctor en su               consultorio. citas Online: Si prefieres una consulta desde la comodidad de tu hogar, también  puedes agendar citas virtuales.",
+            "Citas Presenciales: Elige la fecha de tu cita y visita a tu doctor en su consultorio. Citas Online: Si prefieres una consulta desde la comodidad de tu hogar, también puedes agendar citas virtuales.",
         },
       ],
       render: (item) => {
         const div = document.createElement("div");
         div.className = "inner-technology";
+        div.setAttribute("role", "article");
 
         const span = document.createElement("span");
 
         const icon = document.createElement("i");
         icon.className = item.icon;
+        icon.setAttribute("aria-hidden", "true");
 
         const h2 = document.createElement("h2");
         h2.textContent = item.title;
+        h2.setAttribute("tabindex", "0");
 
         const p = document.createElement("p");
         p.textContent = item.description;
@@ -50,12 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
       content: {
         heading: "Acerca de Health Point Manizales",
         imageSrc: "/assets/img/about3.jpg",
-        imageAlt: "About Image",
+        imageAlt: "Imagen sobre nuestros servicios médicos en Manizales",
         title: "Brindamos un servicio integral a nuestros pacientes.",
         description1:
           "Ofrecemos los servicios médicos más completos para que todas las personas tengan la oportunidad de recibir atención médica de calidad.",
         description2:
-          "En Health Point Manizales, nos enorgullece ofrecer una plataforma integral para agendar citas médicas tanto online como presenciales. Nuestra plataforma ofrece servicio de clase mundial, permitiendo a los pacientes reservar citas con doctores especializados en diversas áreas de la medicina.",
+          "Nos enorgullece ofrecer una plataforma integral para agendar citas médicas tanto online como presenciales. Nuestra plataforma ofrece servicio de clase mundial, permitiendo a los pacientes reservar citas con doctores especializados en diversas áreas de la medicina.",
       },
       render: (content) => {
         const aboutHeading = document.createElement("div");
@@ -70,7 +73,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const img = document.createElement("img");
         img.src = content.imageSrc;
-        img.alt = content.imageAlt;
+        img.alt = content.imageAlt; 
+        img.loading = "lazy";
 
         aboutInnerContentLeft.appendChild(img);
 
@@ -90,13 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
         p2.className = "aboutsec-content";
         p2.textContent = content.description2;
 
-        const button = document.createElement("button");
-        button.textContent = content.buttonText;
-
         aboutRightContent.appendChild(h2);
         aboutRightContent.appendChild(p1);
         aboutRightContent.appendChild(p2);
-        aboutRightContent.appendChild(button);
 
         aboutInnerContent.appendChild(aboutRightContent);
         innerMainAbout.appendChild(aboutInnerContentLeft);
@@ -115,13 +115,13 @@ document.addEventListener("DOMContentLoaded", () => {
         welcomeText: "Bienvenidos a Health Point Manizales.",
         title: "Comprometidos con el bienestar integral de nuestros pacientes.",
         description:
-          "Otorgamos atención medica de calidad fomentando el humanismo,innovación y excelencia logrando la seguridad del paciente, su satisfacción y confianza. Prevenimos y fomentamos estándares en salud.",
+          "Otorgamos atención médica de calidad fomentando el humanismo, innovación y excelencia logrando la seguridad del paciente, su satisfacción y confianza. Prevenimos y fomentamos estándares en salud.",
         buttons: [
           { href: "/servicios", text: "Información" },
           { href: "/doctores", text: "Doctores", class: "homebtnsec" },
         ],
         imageSrc: "/assets/img/her1.png",
-        imageAlt: "Hero Image",
+        imageAlt: "Imagen principal de la plataforma Health Point Manizales",
       },
       render: (content) => {
         const homeDiv = document.createElement("div");
@@ -147,6 +147,8 @@ document.addEventListener("DOMContentLoaded", () => {
           const a = document.createElement("a");
           a.href = button.href;
           a.textContent = button.text;
+          a.setAttribute("role", "button");
+          a.setAttribute("aria-label", button.text);
           if (button.class) {
             a.className = button.class;
           }
@@ -164,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const img = document.createElement("img");
         img.src = content.imageSrc;
         img.alt = content.imageAlt;
+        img.loading = "lazy";
 
         homeRightContent.appendChild(img);
 

@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         };
 
         doctorCard.innerHTML = `
+        <div class="wrapper">
           <div class="doctor-photo">
             <img src="${
               doctor.photo ||
@@ -69,6 +70,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               }">Eliminar</button>
             </div>
           </div>
+        </div>
         `;
 
         doctorCard
@@ -90,13 +92,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
               const approveData = await approveResponse.json();
               if (approveResponse.ok) {
-                const doctorStatusElement = doctorCard.querySelector(
-                  ".doctor-status"
-                );
+                const doctorStatusElement =
+                  doctorCard.querySelector(".doctor-status");
                 doctorStatusElement.textContent = approveData.data.isApproved;
                 Toastify({
                   text: "Doctor aprobado con éxito",
-                  duration: 3000,
+                  duration: 1000,
                   close: true,
                   gravity: "top",
                   position: "right",
@@ -105,7 +106,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               } else {
                 Toastify({
                   text: `Error al aprobar el doctor: ${approveData.message}`,
-                  duration: 3000,
+                  duration: 1000,
                   close: true,
                   gravity: "top",
                   position: "right",
@@ -116,7 +117,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               console.error("Error al aprobar el doctor:", err);
               Toastify({
                 text: "Error al aprobar el doctor",
-                duration: 3000,
+                duration: 1000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -144,13 +145,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
               const cancelData = await cancelResponse.json();
               if (cancelResponse.ok) {
-                const doctorStatusElement = doctorCard.querySelector(
-                  ".doctor-status"
-                );
+                const doctorStatusElement =
+                  doctorCard.querySelector(".doctor-status");
                 doctorStatusElement.textContent = cancelData.data.isApproved;
                 Toastify({
                   text: "Doctor cancelado con éxito",
-                  duration: 3000,
+                  duration: 1000,
                   close: true,
                   gravity: "top",
                   position: "right",
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               } else {
                 Toastify({
                   text: `Error al cancelar el doctor: ${cancelData.message}`,
-                  duration: 3000,
+                  duration: 1000,
                   close: true,
                   gravity: "top",
                   position: "right",
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               console.error("Error al cancelar el doctor:", err);
               Toastify({
                 text: "Error al cancelar el doctor",
-                duration: 3000,
+                duration: 1000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
                     className: "info",
                     position: "right",
-                    duration: 3000,
+                    duration: 1000,
                   }).showToast();
                   doctorCard.remove();
                 } else {
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
                     className: "error",
                     position: "right",
-                    duration: 3000,
+                    duration: 1000,
                   }).showToast();
                 }
               } catch (error) {
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                   background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
                   className: "error",
                   position: "right",
-                  duration: 3000,
+                  duration: 1000,
                 }).showToast();
               }
             }
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
       className: "error",
       position: "right",
-      duration: 3000,
+      duration: 1000,
     }).showToast();
   }
 });

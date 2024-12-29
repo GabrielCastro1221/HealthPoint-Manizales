@@ -4,10 +4,18 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.rent-heading {
+    font-size: 14px;
+    text-align: center;
+    margin: 4rem;
+    color: var(--btncolor);
     margin-top: 100px;
 }
 
 .card {
+    position: relative;
     background: white;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -17,13 +25,24 @@
     border: 1px solid #e0e0e0;
 }
 
+.badge {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    padding: 5px 10px;
+    background-color: rgb(255, 107, 132);
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    z-index: 1;
+}
+
 .card img {
-    width: 100%; 
+    width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 15px 15px 0 0;
 }
-
 
 .card h1 {
     font-size: 20px;
@@ -35,13 +54,19 @@
     font-size: 14px;
     color: var(--textcolor);
     margin: 8px 0;
+    font-weight: 600;
 }
 
 .card .price {
     font-size: 18px;
     font-weight: bold;
-    color: var(--btncolor);
+    color: var(--textcolor);
     margin: 8px 0;
+    margin-top: 15px;
+}
+
+.card .price span {
+    color: var(--textcolor);
 }
 
 .card .btn {

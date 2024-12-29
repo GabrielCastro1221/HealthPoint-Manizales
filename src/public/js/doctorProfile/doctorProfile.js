@@ -99,20 +99,20 @@ document.addEventListener("DOMContentLoaded", () => {
       data.appoinments,
       (appt) => `
       <div class="card">
-        <p><strong>Paciente:</strong> ${appt.user}</p>
+        <p><strong>ID del Paciente:</strong> ${appt.user}</p>
         <p><strong>Fecha de la Cita:</strong> ${new Date(
           appt.appointment_date
         ).toLocaleString()}</p>
-        <p><strong>Pagado:</strong> ${appt.is_paid ? "Sí" : "No"}</p>
+        <p><strong>Pagado:</strong> ${appt.status}</p>
         <p><strong>Precio del Boleto:</strong> $${appt.ticket_price}</p>
         <p><strong>Tipo:</strong> ${appt.type}</p>
         <div class="btns-act">
+        <button class="app" data-id="${appt._id}" title="Aprobar cita medica">Aprobar</button>
         ${
           appt.type === "online"
-            ? `<p><strong></strong> <a class="video_link" href="/video-consulta/${appt._id}" target="_blank">Unirse a la cita</a></p>`
+            ? `<p><strong></strong> <a class="video_link" title="Unirse a la video consulta" href="/video-consulta/${appt._id}" target="_blank"><i class="fa-solid fa-video"></i></a></p>`
             : ""
         }
-        <button class="app" data-id="${appt._id}">Aprobar cita</button>
         <div>
       </div>
     `
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
         icon: "success",
         title: "Estado de renta actualizado a disponible",
         showConfirmButton: false,
-        timer: 3000,
+        timer: 1000,
       });
       fetchDoctorProfile();
     } catch (error) {
@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
         icon: "success",
         title: "Estado de renta actualizado a alquilado",
         showConfirmButton: false,
-        timer: 3000,
+        timer: 1000,
       });
       fetchDoctorProfile();
     } catch (error) {
@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
           icon: "success",
           title: "Renta eliminada con éxito",
           showConfirmButton: false,
-          timer: 3000,
+          timer: 1000,
         });
         fetchDoctorProfile();
       }

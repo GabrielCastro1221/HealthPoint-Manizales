@@ -5,13 +5,8 @@ const schema = new Schema({
   amount: { type: Number, required: true },
   appointment_date: { type: Date, required: true },
   doctor: { type: Schema.Types.ObjectId, ref: "doctors", required: true },
-  users: { type: Schema.Types.ObjectId, ref: "users", required: true },
+  users: { type: Schema.Types.ObjectId, ref: "User", required: true },
   bookings: { type: Schema.Types.ObjectId, ref: "bookings", required: true },
-  status: {
-    type: String,
-    enum: ["pendiente", "confirmado", "cancelado"],
-    default: "pendiente",
-  },
 });
 
 module.exports = model("tickets", schema);

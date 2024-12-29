@@ -1,6 +1,6 @@
 const doctorModel = require("../models/doctor.model");
 const bookingModel = require("../models/booking.model");
-const rentModel = require("../models/rent.model"); // Importar el modelo de rent
+const rentModel = require("../models/rent.model");
 const EmailManager = require("../services/mailer");
 
 const mailer = new EmailManager();
@@ -142,6 +142,7 @@ class DoctorController {
     }
   };
 
+
   getDoctorProfile = async (req, res) => {
     const doctorId = req.userId;
     try {
@@ -154,12 +155,12 @@ class DoctorController {
       }
       const { password, ...rest } = doctor._doc;
       const appoinments = await bookingModel.find({ doctor: doctorId });
-      const rents = await rentModel.find({ doctor: doctorId }); // Obtener los datos de rent
-  
+      const rents = await rentModel.find({ doctor: doctorId });
+
       res.status(200).json({
         success: true,
         message: "Informacion del perfil obtenida satisfactoriamente",
-        data: { ...rest, appoinments, rents }, // Incluir los datos de rent en la respuesta
+        data: { ...rest, appoinments, rents },
       });
     } catch (error) {
       res.status(500).json({
@@ -168,7 +169,6 @@ class DoctorController {
       });
     }
   };
-  
 
   getDoctorAppointments = async (req, res) => {
     try {

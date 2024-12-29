@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (result.status) {
         Toastify({
           text: "Renta creada con éxito",
-          duration: 3000,
+          duration: 1000,
           close: true,
           gravity: "top",
           position: "right",
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         Toastify({
           text: `Error: ${result.message}`,
-          duration: 3000,
+          duration: 1000,
           close: true,
           gravity: "top",
           position: "right",
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error al crear la renta:", error);
       Toastify({
         text: "Ocurrió un error, inténtelo más tarde.",
-        duration: 3000,
+        duration: 1000,
         close: true,
         gravity: "top",
         position: "right",

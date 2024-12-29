@@ -18,10 +18,16 @@
 }
 
 .owner {
-  padding: 8px;
+  padding: 8px 25px;
   background-color: rgba(0, 217, 255, 0.2);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
+}
+
+.owner span {
+  color: var(--btncolor);
+  font-weight: 700;
+  font-size: 1.7rem;
 }
 
 .owner strong {
@@ -102,7 +108,7 @@
   margin-bottom: 20px;
 }
 
-.contact {
+.contact-btn {
   padding: 8px;
   background-color: var(--btncolor);
   color: white;
@@ -114,7 +120,7 @@
   margin-right: 10px;
 }
 
-.contact:hover {
+.contact-btn:hover {
   background-color: var(--secondcolor);
   color: var(--textcolor);
 }

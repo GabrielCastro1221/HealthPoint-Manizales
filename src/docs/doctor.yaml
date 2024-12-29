@@ -1,0 +1,379 @@
+paths:
+  /api/v1/doctors:
+    get:
+      summary: Obtener todos los doctores
+      tags:
+        - Doctores
+      description: Obtiene una lista de todos los doctores registrados en la plataforma.
+      responses:
+        '201':
+          description: Doctores encontrados
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Doctores encontrados"
+                  Doctores:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          example: "Dr. Juan Pérez"
+                        email:
+                          type: string
+                          example: "doctor@example.com"
+                        phone:
+                          type: string
+                          example: "3001234567"
+                        specialization:
+                          type: string
+                          example: "Cardiología"
+                        education:
+                          type: string
+                          example: "Universidad Nacional"
+                        experiences:
+                          type: string
+                          example: "10 años de experiencia en cardiología"
+                        bio:
+                          type: string
+                          example: "Biografía del doctor"
+                        about:
+                          type: string
+                          example: "Información adicional sobre el doctor"
+                        timeSlots:
+                          type: array
+                          items:
+                            type: string
+                          example: ["Lunes 9:00-12:00", "Martes 14:00-17:00"]
+        '404':
+          description: Doctores no encontrados
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Doctores no encontrados"
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al obtener los doctores"
+  /api/v1/doctors/{id}:
+    get:
+      summary: Obtener un doctor por ID
+      tags:
+        - Doctores
+      description: Obtiene los detalles de un doctor específico por su ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID del doctor
+      responses:
+        '201':
+          description: Doctor encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Doctor encontrado"
+                  Doctor:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: "Dr. Juan Pérez"
+                      email:
+                        type: string
+                        example: "doctor@example.com"
+                      phone:
+                        type: string
+                        example: "3001234567"
+                      specialization:
+                        type: string
+                        example: "Cardiología"
+                      education:
+                        type: string
+                        example: "Universidad Nacional"
+                      experiences:
+                        type: string
+                        example: "10 años de experiencia en cardiología"
+                      bio:
+                        type: string
+                        example: "Biografía del doctor"
+                      about:
+                        type: string
+                        example: "Información adicional sobre el doctor"
+                      timeSlots:
+                        type: array
+                        items:
+                          type: string
+                        example: ["Lunes 9:00-12:00", "Martes 14:00-17:00"]
+        '404':
+          description: Doctor no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Doctor no encontrado"
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al obtener el doctor"
+                  error:
+                    type: string
+                    example: "Error al obtener el doctor"
+    put:
+      summary: Actualizar un doctor por ID
+      tags:
+        - Doctores
+      description: Actualiza los detalles de un doctor específico por su ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID del doctor
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Dr. Juan Pérez"
+                email:
+                  type: string
+                  format: email
+                  example: "doctor@example.com"
+                phone:
+                  type: string
+                  example: "3001234567"
+                specialization:
+                  type: string
+                  example: "Cardiología"
+                education:
+                  type: string
+                  example: "Universidad Nacional"
+                experiences:
+                  type: string
+                  example: "10 años de experiencia en cardiología"
+                bio:
+                  type: string
+                  example: "Biografía del doctor"
+                about:
+                  type: string
+                  example: "Información adicional sobre el doctor"
+                timeSlots:
+                  type: array
+                  items:
+                    type: string
+                  example: ["Lunes 9:00-12:00", "Martes 14:00-17:00"]
+                photo:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Doctor actualizado con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Doctor actualizado con éxito"
+                  doctor:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: "Dr. Juan Pérez"
+                      email:
+                        type: string
+                        example: "doctor@example.com"
+                      phone:
+                        type: string
+                        example: "3001234567"
+                      specialization:
+                        type: string
+                        example: "Cardiología"
+                      education:
+                        type: string
+                        example: "Universidad Nacional"
+                      experiences:
+                        type: string
+                        example: "10 años de experiencia en cardiología"
+                      bio:
+                        type: string
+                        example: "Biografía del doctor"
+                      about:
+                        type: string
+                        example: "Información adicional sobre el doctor"
+                      timeSlots:
+                        type: array
+                        items:
+                          type: string
+                        example: ["Lunes 9:00-12:00", "Martes 14:00-17:00"]
+        '404':
+          description: Doctor no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Doctor no encontrado"
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al actualizar el doctor"
+                  error:
+                    type: string
+                    example: "Error al actualizar el doctor"
+    delete:
+      summary: Eliminar un doctor por ID
+      tags:
+        - Doctores
+      description: Elimina un doctor específico por su ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID del doctor
+      responses:
+        '201':
+          description: Doctor eliminado con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Doctor eliminado con éxito"
+                  doctor:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: "Dr. Juan Pérez"
+                      email:
+                        type: string
+                        example: "doctor@example.com"
+                      phone:
+                        type: string
+                        example: "3001234567"
+                      specialization:
+                        type: string
+                        example: "Cardiología"
+                      education:
+                        type: string
+                        example: "Universidad Nacional"
+                      experiences:
+                        type: string
+                        example: "10 años de experiencia en cardiología"
+                      bio:
+                        type: string
+                        example: "Biografía del doctor"
+                      about:
+                        type: string
+                        example: "Información adicional sobre el doctor"
+                      timeSlots:
+                        type: array
+                        items:
+                          type: string
+                        example: ["Lunes 9:00-12:00", "Martes 14:00-17:00"]
+        '404':
+          description: Doctor no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Doctor no encontrado"
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                message:
+                    type: string
+                    example: "Doctor eliminado"

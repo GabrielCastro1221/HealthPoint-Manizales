@@ -1,13 +1,14 @@
 const { Router } = require("express");
 const BookingController = require("../controller/booking.controller");
-const AuthMiddleware = require("../middlewares/verifyToken.middleware");
 
 const router = Router();
 const booking = new BookingController();
-const auth = new AuthMiddleware();
 
 router.get("/", booking.getAllBookings);
 router.get("/:id", booking.getBookingById);
-router.delete("/:id", auth.authenticate, auth.restrict(["admin"]), booking.deleteBooking);
+router.put("/:id/cancelled-status", booking.cancelledAppointment);
+router.put("/:id/approved-status", booking.approvedAppointment);
+router.put("/paid/:id", booking.paidAppointment);
+router.delete("/:id", booking.deleteBooking);
 
 module.exports = router;

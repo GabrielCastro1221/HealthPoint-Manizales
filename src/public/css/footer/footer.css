@@ -116,6 +116,13 @@ footer {
     font-size: 1.4rem;
     margin: 0;
 }
+.contact {
+    background-color: transparent;
+}
+
+.contact:hover {
+    background-color: transparent;
+}
 
 @media (max-width: 768px) {
     .container {

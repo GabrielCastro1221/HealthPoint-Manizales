@@ -142,7 +142,6 @@ class UserController {
         doctor: doctorId,
         users: userId,
         bookings: nuevaCita._id,
-        status: "pendiente",
       });
       await nuevoTicket.save();
 

@@ -16,6 +16,7 @@ class RentController {
         owner_phone,
         owner_email,
         address,
+        sell_rent,
         category,
       } = req.body;
       const requiredFields = [
@@ -27,6 +28,7 @@ class RentController {
         owner_phone,
         dimension,
         address,
+        sell_rent,
         category,
       ];
       if (requiredFields.includes(undefined) || requiredFields.includes(null) || requiredFields.includes("")) {
@@ -48,6 +50,7 @@ class RentController {
         owner_phone,
         dimension,
         address,
+        sell_rent,
         category,
       });
       await newRent.save();

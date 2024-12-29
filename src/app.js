@@ -1,9 +1,9 @@
 const express = require("express");
 const path = require("path");
-const { engine } = require("express-handlebars");
 const configObject = require("./config/env.config");
 const { logger } = require("./middlewares/logger.middleware");
 const setupRoutes = require("./middlewares/routes.middleware");
+const handlebarsMiddleware = require("./middlewares/handlebars.middleware");
 
 require("./config/connection.config");
 
@@ -14,10 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.engine("handlebars", engine());
-app.set("view engine", "handlebars");
-app.set("views", "./src/views");
-
+handlebarsMiddleware(app);
 setupRoutes(app);
 
 app.listen(PORT, () => {
@@ -28,3 +25,5 @@ app.listen(PORT, () => {
     logger.error("Error interno del servidor", err.message);
   }
 });
+
+module.exports = app;

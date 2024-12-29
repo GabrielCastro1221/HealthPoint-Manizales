@@ -2,35 +2,39 @@
 
 <div class="main-doctors">
   <div class="doctors-heading">
-    <h2>Nuestro Equipo</h2>
+    <h1>Nuestro Equipo de doctores</h1>
   </div>
 
-<section class="body-search">
+  <section class="body-search">
     <div class="search-container">
-        <form id="search-form" action="/buscar-doctor" method="get">
-            <input class="in" type="search" name="query" placeholder="Buscar Doctor">
-            <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
+      <form id="search-form" action="/buscar-doctor" method="get">
+        <label for="search-query" class="visually-hidden"></label>
+        <input id="search-query" class="in" type="search" name="query" placeholder="Buscar Doctor"
+          aria-label="Buscar Doctor">
+        <button class="search-btn" type="submit" aria-label="Buscar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
     </div>
-</section>
+  </section>
 
   <div class="main-inner-doctor">
     {{#if doctors}}
     {{#each doctors}}
-    <div class="doc-poster">
+    <article class="doc-poster">
       <div class="doc-icons">
-        <a href="/doctores/{{this._id}}">
+        <a href="/doctores/{{this._id}}" title="Ver detalles de {{this.name}}">
           <i class="fa-solid fa-eye"></i>
         </a>
       </div>
-      <img src="{{this.photo}}" alt="{{this.name}}" class="doc-photo" />
+      <img src="{{this.photo}}" alt="Foto de {{this.name}}" class="doc-photo" loading="lazy" />
       <div class="doc-details mb-3">
         <h2>{{this.name}}</h2>
       </div>
-    </div>
+    </article>
     {{/each}}
     {{else}}
-    <p class="message-error">{{message}}</p>
+    <p class="message-error" role="alert">{{message}}</p>
     {{/if}}
   </div>
 </div>

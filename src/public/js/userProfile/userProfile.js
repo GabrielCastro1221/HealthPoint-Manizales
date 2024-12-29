@@ -240,7 +240,7 @@ deleteButton.addEventListener("click", async () => {
       localStorage.removeItem("user");
       Toastify({
         text: result.message,
-        duration: 3000,
+        duration: 1000,
         close: true,
         gravity: "top",
         position: "right",
@@ -249,11 +249,11 @@ deleteButton.addEventListener("click", async () => {
 
       setTimeout(() => {
         window.location.href = "/";
-      }, 1500);
+      }, 1000);
     } else {
       Toastify({
         text: `Error: ${result.message}`,
-        duration: 3000,
+        duration: 1000,
         close: true,
         gravity: "top",
         position: "right",
@@ -264,7 +264,7 @@ deleteButton.addEventListener("click", async () => {
     console.error("Error al eliminar el usuario:", error);
     Toastify({
       text: "Hubo un error al eliminar la cuenta.",
-      duration: 3000,
+      duration: 1000,
       close: true,
       gravity: "top",
       position: "right",

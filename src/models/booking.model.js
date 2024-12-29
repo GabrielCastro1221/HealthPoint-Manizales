@@ -2,9 +2,13 @@ const { Schema, model } = require("mongoose");
 
 const schema = new Schema({
   doctor: { type: Schema.Types.ObjectId, ref: "doctors", required: true },
-  user: { type: Schema.Types.ObjectId, ref: "users", required: true },
+  user: { type: Schema.Types.ObjectId, ref: "User", required: true },
   appointment_date: { type: Date, required: true },
-  is_paid: { type: Boolean, default: false },
+  is_paid: {
+    type: String,
+    enum: ["Pagada", "No pagada"],
+    default: "No pagada",
+  },
   ticket_price: { type: Number, required: true },
   type: {
     type: String,
@@ -13,8 +17,8 @@ const schema = new Schema({
   },
   status: {
     type: String,
-    enum: ["pending", "approved", "cancelled"],
-    default: "pending",
+    enum: ["pendiente", "aprobada", "cancelada"],
+    default: "pendiente",
   },
 });
 

@@ -182,45 +182,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (result.status && result.nurse) {
         localStorage.setItem("user", JSON.stringify(result.nurse));
-
-        nameInput.value = result.nurse.name || "";
-        emailInput.value = result.nurse.email || "";
-        phoneInput.value = result.nurse.phone || "";
-        bioInput.value = result.nurse.bio || "";
-        aboutInput.value = result.nurse.about || "";
-        specializationInput.value = result.nurse.specialization || "";
-        photoPreview.src =
-          result.nurse.photo ||
-          "https://vineview.com/wp-content/uploads/2017/07/avatar-no-photo-300x300.png";
-
         Toastify({
           text: "Perfil actualizado con éxito",
-          duration: 3000,
+          duration: 1000,
           close: true,
           gravity: "top",
           position: "right",
           background: "#4CAF50",
         }).showToast();
         setTimeout(() => {
-          window.location.href = "/login";
-        }, 3000);
+          location.reload();
+        }, 1000);
       } else {
         Toastify({
-          text: `Error al actualizar el perfil: ${
-            result.message || "Error desconocido"
-          }`,
-          duration: 3000,
+          text: `${result.message || "Error desconocido"}`,
+          duration: 1000,
           close: true,
           gravity: "top",
           position: "right",
           background: "#FF0000",
         }).showToast();
+        setTimeout(() => {
+          location.reload();
+        }, 1000);
       }
     } catch (err) {
       console.error("Error al actualizar el perfil:", err);
       Toastify({
         text: "Error al actualizar el perfil",
-        duration: 3000,
+        duration: 1000,
         close: true,
         gravity: "top",
         position: "right",

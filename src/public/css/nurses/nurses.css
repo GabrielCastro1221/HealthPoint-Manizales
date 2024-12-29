@@ -1,5 +1,5 @@
 .main-doctors {
-    padding: 2rem 7%;
+    padding: 0.5rem 7%;
     background-image: url(/assets/img/backgroung-pattern-3.png);
     background-color: #f5f5f5;
     width: 100%;
@@ -12,8 +12,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-bottom: 40px;
 }
 
 .search-container {
@@ -48,7 +48,7 @@
 
 
 .doctors-heading {
-    font-size: 30px;
+    font-size: 14px;
     text-align: center;
     margin: 4rem;
     color: var(--btncolor);

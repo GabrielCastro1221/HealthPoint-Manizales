@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const a = document.createElement("a");
       a.href = link.href;
       a.textContent = link.text;
+      a.setAttribute("title", link.text);
       navbarContainer.appendChild(a);
     });
   }

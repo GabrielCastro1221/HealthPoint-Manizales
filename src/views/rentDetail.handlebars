@@ -18,15 +18,13 @@
         </div>
         <div class="details">
             <div class="owner">
-                <strong>
-                    propietario:
-                    <span>
-                        {{rent.owner}}
-                    </span>
-                </strong>
+                <span>{{rent.sell_rent}}</span>
             </div>
             <h2>{{rent.title}}</h2>
             <p style="font-size: 1.4rem;">{{rent.description}}</p>
+            <p class="price"><strong class="sub">Propietario:</strong>
+                <span>{{rent.owner}}</span>
+            </p>
             <p class="price"><strong class="sub">Precio:</strong>
                 <span>${{rent.price}}</span>
             </p>
@@ -40,17 +38,17 @@
                 <span>{{rent.status}}</span>
             </p>
             <div class="contact-container">
-                <a class="contact" target="_blank" href="https://api.whatsapp.com/send?phone={{rent.owner_phone}}">
+                <a class="contact-btn" target="_blank" href="https://api.whatsapp.com/send?phone={{rent.owner_phone}}">
                     <i class="fa-brands fa-whatsapp"></i>
                     Contactar con el Propietario
                 </a>
             </div>
-      
-               <a class="contact" target="_blank" href="mailto:{{rent.owner_phone}}">
-                    <i class="fa-solid fa-envelope"></i>
-                    Contactar via email
-                </a>
-        
+
+            <a class="contact-btn" target="_blank" href="mailto:{{rent.owner_phone}}">
+                <i class="fa-solid fa-envelope"></i>
+                Contactar via email
+            </a>
+
         </div>
     </div>
 </div>

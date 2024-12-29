@@ -1,8 +1,7 @@
 <link rel="stylesheet" href="/css/createRent/createRent.css" />
 
-
 <div class="create-rent-wrapper">
-    <button class="create-btn">Publicar consultorio en alquiler</button>
+    <button class="create-btn">¿ Quieres alquilar un consultorio medico ?</button>
 </div>
 
 <div class="modal" id="createRentModal">
@@ -36,6 +35,14 @@
 
             <label for="category">Categoría</label>
             <input type="text" id="category" name="category" required />
+
+            <label class="label">
+                Venta o alquiler?:
+                <select name="sell_rent" class="select-field">
+                    <option value="venta">Venta</option>
+                    <option value="alquiler">Alquiler</option>
+                </select>
+            </label>
 
             <label for="mainImg">Imagen principal</label>
             <input type="file" id="mainImg" name="mainImg" required />

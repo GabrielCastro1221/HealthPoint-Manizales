@@ -16,18 +16,4 @@ router.delete(
   ticket.deleteTicket
 );
 
-router.put(
-  "/confirm/:id",
-  auth.authenticate,
-  auth.restrict(["admin", "doctor"]),
-  ticket.confirmStatusTicket
-);
-
-router.put(
-  "/cancelled/:id",
-  auth.authenticate,
-  auth.restrict(["admin", "doctor"]),
-  ticket.cancelledStatusTicket
-);
-
 module.exports = router;

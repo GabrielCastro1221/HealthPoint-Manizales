@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("user", JSON.stringify(result.doctor));
         Toastify({
           text: "Perfil actualizado con éxito",
-          duration: 3000,
+          duration: 1000,
           close: true,
           gravity: "top",
           position: "right",
@@ -196,11 +196,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }).showToast();
         setTimeout(() => {
           location.reload();
-        }, 3000);
+        }, 1000);
       } else {
         Toastify({
           text: "Error al actualizar el perfil: " + result.message,
-          duration: 3000,
+          duration: 1000,
           close: true,
           gravity: "top",
           position: "right",
@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error al actualizar el perfil:", err);
       Toastify({
         text: "Error al actualizar el perfil",
-        duration: 3000,
+        duration: 1000,
         close: true,
         gravity: "top",
         position: "right",

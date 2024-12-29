@@ -17,6 +17,11 @@ const schema = new Schema({
     enum: ["pending", "approved", "cancelled"],
     default: "pending",
   },
+  sell_rent: {
+    type: String,
+    enum: ["alquiler", "venta"],
+    default: "alquiler",
+  },
   status: {
     type: String,
     enum: ["alquilado", "disponible"],

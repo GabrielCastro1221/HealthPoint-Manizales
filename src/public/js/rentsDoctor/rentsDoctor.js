@@ -7,19 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const addImageButton = document.getElementById("add-image");
   const galleryContainer = document.getElementById("photo-inputs");
 
-  // Abrir modal
   openModalButton.addEventListener("click", () => {
     modal.classList.remove("hidden");
     modal.style.display = "flex";
   });
 
-  // Cerrar modal
   closeModalButton.addEventListener("click", () => {
     modal.classList.add("hidden");
     modal.style.display = "none";
   });
 
-  // Cerrar modal si se hace click fuera de la ventana
   modal.addEventListener("click", (event) => {
     if (event.target === modal) {
       modal.classList.add("hidden");
@@ -27,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Agregar más imágenes a la galería
   addImageButton.addEventListener("click", () => {
     const newInputContainer = document.createElement("div");
     newInputContainer.classList.add("file-input-container");
@@ -41,22 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const newLabel = document.createElement("label");
     newLabel.classList.add("file-input-label");
     newLabel.innerHTML = '<i class="fas fa-plus"></i>';
-    
+
     newInputContainer.appendChild(newInput);
     newInputContainer.appendChild(newLabel);
     galleryContainer.appendChild(newInputContainer);
   });
 
-  // Manejo de envío de formulario
   createForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-
-
-    // Crear FormData con los valores del formulario
     const formData = new FormData(createForm);
-    
-    // Añadir el doctorId y category a FormData // Asegurarse de enviar el ID del doctor
-    formData.append("category", document.getElementById("category").value);  // Enviar la categoría
+    formData.append("category", document.getElementById("category").value);
 
     try {
       const response = await fetch("/api/v1/rent", {
@@ -75,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Renta creada con éxito:", data);
       Toastify({
         text: "Renta creada con éxito",
-        duration: 3000,
+        duration: 1000,
         close: true,
         gravity: "top",
         position: "right",
@@ -85,12 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.classList.add("hidden");
       modal.style.display = "none";
 
-      fetchDoctorProfile(); 
+      fetchDoctorProfile();
     } catch (error) {
       console.error("Error:", error.message);
       Toastify({
         text: "Error al crear la renta",
-        duration: 3000,
+        duration: 1000,
         close: true,
         gravity: "top",
         position: "right",
@@ -102,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const rentsContainer = document.getElementById("rents-card-container");
   const rents = JSON.parse(localStorage.getItem("rents")) || [];
   const doctorId = localStorage.getItem("_id");
-console.log(doctorId)
+  console.log(doctorId);
   rents.forEach((rent) => {
     const rentElement = document.createElement("div");
     rentElement.classList.add("rent-item");
