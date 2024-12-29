@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
       });
     } else {
-      rentsCardContainer.innerHTML = "<p>No se encontraron rentas.</p>";
+      rentsCardContainer.innerHTML = "<p>No hay rentas registradas en la plataforma.</p>";
     }
   } catch (error) {
     console.error("Error al obtener las rentas:", error);

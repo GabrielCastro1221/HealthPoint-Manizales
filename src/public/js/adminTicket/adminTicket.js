@@ -10,7 +10,7 @@ async function fetchTicket() {
     const data = await response.json();
 
     if (!data.status) {
-      ticketCardContainer.innerHTML = "<p>No hay ticket disponibles.</p>";
+      ticketCardContainer.innerHTML = "<p>No se han generado tickets en la plataforma.</p>";
       return;
     }
 

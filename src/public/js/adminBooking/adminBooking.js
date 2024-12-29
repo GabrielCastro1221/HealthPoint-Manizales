@@ -11,7 +11,7 @@ async function fetchBookings() {
 
     if (!data.status) {
       bookingCardContainer.innerHTML =
-        "<p>No hay citas médicas disponibles.</p>";
+        "<p>No hay citas médicas agendadas en la plataforma.</p>";
       return;
     }
 

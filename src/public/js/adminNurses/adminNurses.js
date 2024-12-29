@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             </div>
           </div>
         `;
-
         const approveButton = nurseCard.querySelector(".approveNurse");
         approveButton.addEventListener("click", async (event) => {
           const nurseId = event.target.dataset.id;
@@ -94,36 +93,14 @@ document.addEventListener("DOMContentLoaded", async () => {
               const nurseStatusElement =
                 nurseCard.querySelector(".nurse-status");
               nurseStatusElement.textContent = approveData.data.isApproved;
-              Toastify({
-                text: "Enfermera aprobada con éxito",
-                duration: 1000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                background: "#4CAF50",
-              }).showToast();
             } else {
-              Toastify({
-                text: `Error al aprobar la enfermera: ${approveData.message}`,
-                duration: 1000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                background: "#FF0000",
-              }).showToast();
+              console.error("Error al aprobar la enfermera:", approveData);
             }
           } catch (err) {
             console.error("Error al aprobar la enfermera:", err);
-            Toastify({
-              text: "Error al aprobar la enfermera",
-              duration: 1000,
-              close: true,
-              gravity: "top",
-              position: "right",
-              background: "#FF0000",
-            }).showToast();
           }
         });
+
         const cancelButton = nurseCard.querySelector(".cancelNurse");
         cancelButton.addEventListener("click", async (event) => {
           const nurseId = event.target.dataset.id;
@@ -146,34 +123,11 @@ document.addEventListener("DOMContentLoaded", async () => {
               const nurseStatusElement =
                 nurseCard.querySelector(".nurse-status");
               nurseStatusElement.textContent = cancelData.data.isApproved;
-              Toastify({
-                text: "Enfermera cancelada con éxito",
-                duration: 1000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                background: "#FF0000",
-              }).showToast();
             } else {
-              Toastify({
-                text: `Error al cancelar la enfermera: ${cancelData.message}`,
-                duration: 1000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                background: "#FF0000",
-              }).showToast();
+              console.error("Error al cancelar la enfermera:", cancelData);
             }
           } catch (err) {
             console.error("Error al cancelar la enfermera:", err);
-            Toastify({
-              text: "Error al cancelar la enfermera",
-              duration: 1000,
-              close: true,
-              gravity: "top",
-              position: "right",
-              background: "#FF0000",
-            }).showToast();
           }
         });
 
@@ -194,56 +148,30 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             if (deleteResponse.ok) {
               nurseCardContainer.removeChild(nurseCard);
-              Toastify({
-                text: "Enfermera eliminada con éxito",
-                duration: 1000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                background: "#FF0000",
-              }).showToast();
             } else {
-              Toastify({
-                text: `Error al eliminar la enfermera: ${deleteData.message}`,
-                duration: 1000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                background: "#FF0000",
-              }).showToast();
+              console.error("Error al eliminar la enfermera:", deleteData);
             }
           } catch (err) {
             console.error("Error al eliminar la enfermera:", err);
-            Toastify({
-              text: "Error al eliminar la enfermera",
-              duration: 1000,
-              close: true,
-              gravity: "top",
-              position: "right",
-              background: "#FF0000",
-            }).showToast();
           }
         });
+
         nurseCardContainer.appendChild(nurseCard);
       });
     } else {
-      console.log("No se encontraron enfermeras o la respuesta es incorrecta.");
-      Toastify({
-        text: "No se encontraron enfermeras.",
-        background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
-        className: "error",
-        position: "right",
-        duration: 1000,
-      }).showToast();
+      const messageParagraph = document.createElement("p");
+      messageParagraph.textContent =
+        "No hay enfermeras registradas en la plataforma.";
+      messageParagraph.style.color = "#000";
+      messageParagraph.style.textAlign = "center";
+      nurseCardContainer.appendChild(messageParagraph);
     }
   } catch (error) {
     console.error("Error fetching nurses:", error);
-    Toastify({
-      text: "Error al cargar los datos de las enfermeras.",
-      background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
-      className: "error",
-      position: "right",
-      duration: 1000,
-    }).showToast();
+    const errorParagraph = document.createElement("p");
+    errorParagraph.textContent = "Error al cargar los datos de las enfermeras.";
+    errorParagraph.style.color = "#000";
+    errorParagraph.style.textAlign = "center";
+    nurseCardContainer.appendChild(errorParagraph);
   }
 });

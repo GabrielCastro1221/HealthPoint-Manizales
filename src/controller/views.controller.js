@@ -33,7 +33,7 @@ class ViewsController {
       if (!doctors || doctors.length === 0) {
         return res.render("doctors", {
           doctors: null,
-          message: "Doctores no encontrados",
+          message: "Lo sentimos, No hay doctores disponibles en este momento...",
         });
       }
       res.render("doctors", { doctors });
@@ -178,7 +178,7 @@ class ViewsController {
       if (!nurses || nurses.length === 0) {
         return res.render("nurses", {
           doctors: null,
-          message: "Enfermeras no encontrados",
+          message: "Lo sentimos, No hay enfermeras disponibles en este momento...",
         });
       }
       res.render("nurses", { nurses });
@@ -216,7 +216,7 @@ class ViewsController {
       if (!rents || rents.length === 0) {
         return res.render("rent", {
           rent: null,
-          message: "rentas no encontradas",
+          message: "Lo sentimos, No hay inmubles disponibles en este momento...",
         });
       }
       res.render("rent", { rents });
