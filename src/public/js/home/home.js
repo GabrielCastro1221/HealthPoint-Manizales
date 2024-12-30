@@ -55,8 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
         imageSrc: "/assets/img/about3.jpg",
         imageAlt: "Imagen sobre nuestros servicios médicos en Manizales",
         title: "Brindamos un servicio integral a nuestros pacientes.",
-        description1:
-          "Ofrecemos los servicios médicos más completos para que todas las personas tengan la oportunidad de recibir atención médica de calidad.",
         description2:
           "Nos enorgullece ofrecer una plataforma integral para agendar citas médicas tanto online como presenciales. Nuestra plataforma ofrece servicio de clase mundial, permitiendo a los pacientes reservar citas con doctores especializados en diversas áreas de la medicina.",
       },
