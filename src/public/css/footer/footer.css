@@ -116,6 +116,22 @@ footer {
     font-size: 1.4rem;
     margin: 0;
 }
+
+.copyrighttext p span {
+    color: var(--btncolor);
+    font-weight: 600;
+}
+
+.copyrighttext a {
+    color: var(--btncolor);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.copyrighttext a:hover {
+    color: var(--secondcolor);
+}
+
 .contact {
     background-color: transparent;
 }
